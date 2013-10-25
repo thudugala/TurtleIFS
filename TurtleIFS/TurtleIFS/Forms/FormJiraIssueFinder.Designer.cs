@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxJiraDescription = new System.Windows.Forms.TextBox();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -37,6 +38,12 @@
             this.checkBoxMultidev = new System.Windows.Forms.CheckBox();
             this.textBoxLcsBugId = new System.Windows.Forms.TextBox();
             this.textBoxJiraId = new System.Windows.Forms.TextBox();
+            this.buttonLcs = new System.Windows.Forms.Button();
+            this.progressBarLoding = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorkerGetDescription = new System.ComponentModel.BackgroundWorker();
+            this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.resetSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -127,12 +134,54 @@
             this.textBoxJiraId.TabIndex = 1;
             this.textBoxJiraId.Text = global::TurtleIFS.Properties.Settings.Default.JiraID;
             // 
+            // buttonLcs
+            // 
+            this.buttonLcs.Location = new System.Drawing.Point(241, 36);
+            this.buttonLcs.Name = "buttonLcs";
+            this.buttonLcs.Size = new System.Drawing.Size(30, 23);
+            this.buttonLcs.TabIndex = 12;
+            this.buttonLcs.Text = "...";
+            this.buttonLcs.UseVisualStyleBackColor = true;
+            this.buttonLcs.Click += new System.EventHandler(this.buttonLcs_Click);
+            // 
+            // progressBarLoding
+            // 
+            this.progressBarLoding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarLoding.Location = new System.Drawing.Point(481, 65);
+            this.progressBarLoding.Name = "progressBarLoding";
+            this.progressBarLoding.Size = new System.Drawing.Size(100, 23);
+            this.progressBarLoding.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBarLoding.TabIndex = 13;
+            this.progressBarLoding.Visible = false;
+            // 
+            // backgroundWorkerGetDescription
+            // 
+            this.backgroundWorkerGetDescription.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerGetDescription_DoWork);
+            this.backgroundWorkerGetDescription.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerGetDescription_RunWorkerCompleted);
+            // 
+            // contextMenuStripMain
+            // 
+            this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetSettingsToolStripMenuItem});
+            this.contextMenuStripMain.Name = "contextMenuStripMain";
+            this.contextMenuStripMain.Size = new System.Drawing.Size(153, 48);
+            // 
+            // resetSettingsToolStripMenuItem
+            // 
+            this.resetSettingsToolStripMenuItem.Name = "resetSettingsToolStripMenuItem";
+            this.resetSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resetSettingsToolStripMenuItem.Text = "Reset Settings";
+            this.resetSettingsToolStripMenuItem.Click += new System.EventHandler(this.resetSettingsToolStripMenuItem_Click);
+            // 
             // FormJiraIssueFinder
             // 
             this.AcceptButton = this.buttonOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 100);
+            this.ContextMenuStrip = this.contextMenuStripMain;
+            this.Controls.Add(this.progressBarLoding);
+            this.Controls.Add(this.buttonLcs);
             this.Controls.Add(this.checkBoxMultidev);
             this.Controls.Add(this.textBoxLcsBugDescription);
             this.Controls.Add(this.textBoxLcsBugId);
@@ -145,11 +194,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(690, 134);
             this.Name = "FormJiraIssueFinder";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jira Issue Finder";
+            this.contextMenuStripMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +217,10 @@
         private System.Windows.Forms.TextBox textBoxLcsBugId;
         private System.Windows.Forms.TextBox textBoxLcsBugDescription;
         private System.Windows.Forms.CheckBox checkBoxMultidev;
+        private System.Windows.Forms.Button buttonLcs;
+        private System.Windows.Forms.ProgressBar progressBarLoding;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerGetDescription;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
+        private System.Windows.Forms.ToolStripMenuItem resetSettingsToolStripMenuItem;
     }
 }

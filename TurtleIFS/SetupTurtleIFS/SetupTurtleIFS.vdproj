@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_BC14BF84D7930341A84D5695A9143D40"
+        "MsmKey" = "8:_434697805162C75230603F486E57AC07"
         "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4A9592A304C6F82D7EEDD488410CFFE"
+        "MsmKey" = "8:_8BA06DD5C606E9F08A1541AB77F89594"
         "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C4A9592A304C6F82D7EEDD488410CFFE"
+        "OwnerKey" = "8:_8BA06DD5C606E9F08A1541AB77F89594"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BC14BF84D7930341A84D5695A9143D40"
+        "OwnerKey" = "8:_434697805162C75230603F486E57AC07"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -111,6 +111,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -141,14 +154,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BC14BF84D7930341A84D5695A9143D40"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_434697805162C75230603F486E57AC07"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Atlassian.Jira, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BC14BF84D7930341A84D5695A9143D40"
+                    "_434697805162C75230603F486E57AC07"
                     {
                     "Name" = "8:Atlassian.Jira.dll"
                     "Attributes" = "3:512"
@@ -172,14 +185,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C4A9592A304C6F82D7EEDD488410CFFE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8BA06DD5C606E9F08A1541AB77F89594"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Interop.BugTraqProvider, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C4A9592A304C6F82D7EEDD488410CFFE"
+                    "_8BA06DD5C606E9F08A1541AB77F89594"
                     {
                     "Name" = "8:Interop.BugTraqProvider.dll"
                     "Attributes" = "3:512"
@@ -258,16 +271,16 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:SetupTurtleIFS"
-        "ProductCode" = "8:{5E13AB7C-416A-4D90-ADC5-E8E811849A15}"
-        "PackageCode" = "8:{2D1887DB-596F-4E7D-A3E3-17E83F11A301}"
+        "ProductName" = "8:Turtle IFS"
+        "ProductCode" = "8:{3D4661D1-A225-4BAE-8CC0-4051BDF02725}"
+        "PackageCode" = "8:{B6284174-DE49-4C55-9995-EC734E7E4236}"
         "UpgradeCode" = "8:{23CA1A34-3D4C-4BCB-B65E-66738E617D90}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:IFS World"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -344,6 +357,72 @@
                             "Transitive" = "11:FALSE"
                                 "Keys"
                                 {
+                                }
+                                "Values"
+                                {
+                                }
+                            }
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_A3AA8BA321B34BBEBB40C40879738A67"
+                            {
+                            "Name" = "8:TortoiseSVN"
+                            "Condition" = "8:"
+                            "AlwaysCreate" = "11:TRUE"
+                            "DeleteAtUninstall" = "11:FALSE"
+                            "Transitive" = "11:FALSE"
+                                "Keys"
+                                {
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_07EFE10C79474AACB16194836205161D"
+                                    {
+                                    "Name" = "8:BugTraq Associations"
+                                    "Condition" = "8:"
+                                    "AlwaysCreate" = "11:TRUE"
+                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "Transitive" = "11:FALSE"
+                                        "Keys"
+                                        {
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_42775CC1E64E4F6C9D4EB8F1407D92FE"
+                                            {
+                                            "Name" = "8:0"
+                                            "Condition" = "8:"
+                                            "AlwaysCreate" = "11:TRUE"
+                                            "DeleteAtUninstall" = "11:TRUE"
+                                            "Transitive" = "11:FALSE"
+                                                "Keys"
+                                                {
+                                                }
+                                                "Values"
+                                                {
+                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_419B2FE7EBD04ACABBC5A733D58E8359"
+                                                    {
+                                                    "Name" = "8:WorkingCopy"
+                                                    "Condition" = "8:"
+                                                    "Transitive" = "11:FALSE"
+                                                    "ValueTypes" = "3:1"
+                                                    "Value" = "8:"
+                                                    }
+                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_7C5183CD4C264001A9EFE74680295C01"
+                                                    {
+                                                    "Name" = "8:Provider"
+                                                    "Condition" = "8:"
+                                                    "Transitive" = "11:FALSE"
+                                                    "ValueTypes" = "3:1"
+                                                    "Value" = "8:{DD5D4E0F-9012-4333-AFD4-0F9CC45C8C89}"
+                                                    }
+                                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_8188EF73D69242C6A71113AB545AEC35"
+                                                    {
+                                                    "Name" = "8:Parameters"
+                                                    "Condition" = "8:"
+                                                    "Transitive" = "11:FALSE"
+                                                    "ValueTypes" = "3:1"
+                                                    "Value" = "8:"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        "Values"
+                                        {
+                                        }
+                                    }
                                 }
                                 "Values"
                                 {
@@ -882,7 +961,7 @@
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:2"
+            "ProjectOutputGroupRegister" = "3:3"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{B09B0129-FE16-4D07-9F0F-865E86C7D532}"

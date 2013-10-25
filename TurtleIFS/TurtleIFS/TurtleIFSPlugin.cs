@@ -21,7 +21,7 @@ namespace TurtleIFS
 
         public string GetLinkText(IntPtr hParentWnd, string parameters)
         {
-            return "Select Jira Issue";
+            return "IFS Commit Message";
         }
                 
         public string GetCommitMessage(IntPtr hParentWnd, string parameters, string commonRoot, string[] pathList, string originalMessage)

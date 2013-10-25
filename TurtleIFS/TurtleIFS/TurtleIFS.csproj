@@ -37,6 +37,10 @@
     <Reference Include="Interop.BugTraqProvider">
       <HintPath>..\packages\TortoiseSVN.BugTraqProvider\lib\net20\Interop.BugTraqProvider.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -48,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\BwArguments.cs" />
     <Compile Include="Classes\TicketItem.cs" />
     <Compile Include="Forms\FormJiraIssueFinder.cs">
       <SubType>Form</SubType>

@@ -39,6 +39,8 @@
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::TurtleIFS.Properties.Settings.Default, "JiraPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBoxPassword.Location = new System.Drawing.Point(103, 67);
             this.textBoxPassword.Name = "textBoxPassword";
@@ -49,6 +51,8 @@
             // 
             // textBoxUserName
             // 
+            this.textBoxUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::TurtleIFS.Properties.Settings.Default, "JiraUserName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBoxUserName.Location = new System.Drawing.Point(103, 41);
             this.textBoxUserName.Name = "textBoxUserName";
@@ -58,6 +62,8 @@
             // 
             // textBoxServer
             // 
+            this.textBoxServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxServer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::TurtleIFS.Properties.Settings.Default, "JiraServer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBoxServer.Location = new System.Drawing.Point(103, 15);
             this.textBoxServer.Name = "textBoxServer";
@@ -94,8 +100,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonSave.Location = new System.Drawing.Point(251, 93);
             this.buttonSave.Name = "buttonSave";
@@ -121,6 +126,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(354, 160);
             this.Name = "FormJiraLogging";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
