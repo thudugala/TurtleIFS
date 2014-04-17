@@ -14,18 +14,20 @@ namespace TurtleIFS.Forms
         public FormJiraLogging()
         {
             InitializeComponent();
+
+            userControlJiraLogging1.OnSaveButtonClick += new UserControlJiraLogging.SaveButtonEventHandler(userControlJiraLogging1_OnSaveButtonClick);
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        void userControlJiraLogging1_OnSaveButtonClick(object sender, EventArgs args)
         {
             try
             {
-                Properties.Settings.Default.Save();
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Saving Settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error Closing Window", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }            
     }
 }

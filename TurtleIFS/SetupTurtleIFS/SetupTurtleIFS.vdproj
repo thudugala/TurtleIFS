@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_434697805162C75230603F486E57AC07"
+        "MsmKey" = "8:_16B6EF1DD50B0AAC9D3474282B12A1B3"
         "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8BA06DD5C606E9F08A1541AB77F89594"
+        "MsmKey" = "8:_2CF93F9E19DD66355E309363E697EE04"
         "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8BA06DD5C606E9F08A1541AB77F89594"
+        "OwnerKey" = "8:_2CF93F9E19DD66355E309363E697EE04"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_434697805162C75230603F486E57AC07"
+        "OwnerKey" = "8:_16B6EF1DD50B0AAC9D3474282B12A1B3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -154,14 +154,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_434697805162C75230603F486E57AC07"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_16B6EF1DD50B0AAC9D3474282B12A1B3"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Atlassian.Jira, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_434697805162C75230603F486E57AC07"
+                    "_16B6EF1DD50B0AAC9D3474282B12A1B3"
                     {
                     "Name" = "8:Atlassian.Jira.dll"
                     "Attributes" = "3:512"
@@ -185,14 +185,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8BA06DD5C606E9F08A1541AB77F89594"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2CF93F9E19DD66355E309363E697EE04"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Interop.BugTraqProvider, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8BA06DD5C606E9F08A1541AB77F89594"
+                    "_2CF93F9E19DD66355E309363E697EE04"
                     {
                     "Name" = "8:Interop.BugTraqProvider.dll"
                     "Attributes" = "3:512"
@@ -272,15 +272,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Turtle IFS"
-        "ProductCode" = "8:{3D4661D1-A225-4BAE-8CC0-4051BDF02725}"
-        "PackageCode" = "8:{B6284174-DE49-4C55-9995-EC734E7E4236}"
+        "ProductCode" = "8:{E022BFA0-AC2C-4ADE-8EE9-8862388E94CB}"
+        "PackageCode" = "8:{87163D6D-A5F8-416C-A78D-0DC367F4660E}"
         "UpgradeCode" = "8:{23CA1A34-3D4C-4BCB-B65E-66738E617D90}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:IFS World"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

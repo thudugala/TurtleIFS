@@ -61,22 +61,19 @@ namespace TurtleIFS.Forms
 
                 if (backgroundWorkerGetDescription.IsBusy == false)
                 {
-                    if (this.myJira == null)
+                    if (string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraServer) ||
+                        string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraUserName) ||
+                        string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraPassword))
                     {
-                        if (string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraServer) ||
-                            string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraUserName) ||
-                            string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraPassword))
-                        {
-                            FormJiraLogging logging = new FormJiraLogging();
-                            logging.ShowDialog(this);
-                        }
-
-                        this.myJira = new Jira(Properties.Settings.Default.JiraServer.Trim(),
-                                               Properties.Settings.Default.JiraUserName.Trim(),
-                                               Properties.Settings.Default.JiraPassword.Trim());
-                        this.myJira.Debug = false;
-                        this.myJira.MaxIssuesPerRequest = int.MaxValue;
+                        FormJiraLogging logging = new FormJiraLogging();
+                        logging.ShowDialog(this);
                     }
+
+                    this.myJira = new Jira(Properties.Settings.Default.JiraServer.Trim(),
+                                           Properties.Settings.Default.JiraUserName.Trim(),
+                                           Properties.Settings.Default.JiraPassword.Trim());
+                    this.myJira.Debug = false;
+                    this.myJira.MaxIssuesPerRequest = int.MaxValue;
 
                     backgroundWorkerGetDescription.RunWorkerAsync(new BwArguments(JobType.JIRA, textBoxJiraId.Text));
                 }
