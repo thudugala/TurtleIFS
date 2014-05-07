@@ -28,26 +28,26 @@ namespace TurtleIFS.Forms
             InitializeComponent();
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(textBoxJiraId.Text) == false)
+                if (radioButtonJira.Checked)
                 {
-                    this.CommitMessage = textBoxJiraId.Text + ": " + textBoxJiraDescription.Text;
+                    this.CommitMessage = textBoxIssueId.Text + ": " + textBoxDescription.Text;
                 }
-                else if (string.IsNullOrWhiteSpace(textBoxLcsBugId.Text) == false)
+                else if (radioButtonLcs.Checked)
                 {
                     this.CommitMessage = "LCS";
                     if (checkBoxMultidev.Checked)
                     {
                         this.CommitMessage += "{MULTIDEV}";
                     }
-                    this.CommitMessage += "-" + textBoxLcsBugId.Text + ": " + textBoxLcsBugDescription.Text;
+                    this.CommitMessage += "-" + textBoxIssueId.Text + ": " + textBoxDescription.Text;
                 }
                 this.CommitMessage = this.CommitMessage.Trim();
-
-                Properties.Settings.Default.Save();
+                
+                this.SaveSettings();
             }
             catch (Exception ex)
             {
@@ -55,38 +55,14 @@ namespace TurtleIFS.Forms
             }
         }
 
-        private void buttonJira_Click(object sender, EventArgs e)
+        private void SaveSettings()
         {
-            try
-            {
-                this.SetControlVisibility(true);
+            Properties.Settings.Default.JiraSelected = this.radioButtonJira.Checked;
 
-                if (backgroundWorkerGetDescription.IsBusy == false)
-                {
-                    if (string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraServer) ||
-                        string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraUserName) ||
-                        string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraPassword))
-                    {
-                        FormJiraLogging logging = new FormJiraLogging();
-                        logging.ShowDialog(this);
-                    }
-
-                    this.myJira = new Jira(Properties.Settings.Default.JiraServer.Trim(),
-                                           Properties.Settings.Default.JiraUserName.Trim(),
-                                           Properties.Settings.Default.JiraPassword.Trim());
-                    this.myJira.Debug = false;
-                    this.myJira.MaxIssuesPerRequest = int.MaxValue;
-
-                    backgroundWorkerGetDescription.RunWorkerAsync(new BwArguments(JobType.JIRA, textBoxJiraId.Text));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, "Error Jira", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            Properties.Settings.Default.Save();
         }
 
-        private void buttonLcs_Click(object sender, EventArgs e)
+        private void buttonIssueFinder_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,7 +70,32 @@ namespace TurtleIFS.Forms
 
                 if (backgroundWorkerGetDescription.IsBusy == false)
                 {
-                    backgroundWorkerGetDescription.RunWorkerAsync(new BwArguments(JobType.LCS, textBoxLcsBugId.Text));
+                    if (radioButtonJira.Checked)
+                    {
+                        if (string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraServer) ||
+                            string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraUserName) ||
+                            string.IsNullOrWhiteSpace(Properties.Settings.Default.JiraPassword))
+                        {
+                            FormJiraLogging logging = new FormJiraLogging();
+                            logging.ShowDialog(this);
+                        }
+
+                        this.myJira = new Jira(Properties.Settings.Default.JiraServer.Trim(),
+                                               Properties.Settings.Default.JiraUserName.Trim(),
+                                               Properties.Settings.Default.JiraPassword.Trim());
+                        this.myJira.Debug = false;
+                        this.myJira.MaxIssuesPerRequest = int.MaxValue;
+
+                        backgroundWorkerGetDescription.RunWorkerAsync(new BwArguments(JobType.JIRA, textBoxIssueId.Text));
+                    }
+                    else if (radioButtonLcs.Checked)
+                    {
+                        backgroundWorkerGetDescription.RunWorkerAsync(new BwArguments(JobType.LCS, textBoxIssueId.Text));
+                    }
+                    else
+                    {
+                        this.SetControlVisibility(false);
+                    }
                 }
             }
             catch (Exception ex)
@@ -204,14 +205,7 @@ namespace TurtleIFS.Forms
                     if (e.Result != null && e.Result is BwArguments)
                     {
                         BwArguments arg = (e.Result as BwArguments);
-                        if (arg.Type == JobType.JIRA)
-                        {
-                            textBoxJiraDescription.Text = arg.Message;
-                        }
-                        else if (arg.Type == JobType.LCS)
-                        {
-                            textBoxLcsBugDescription.Text = arg.Message;
-                        }
+                        textBoxDescription.Text = arg.Message;
                     }
                 }
             }
@@ -231,9 +225,8 @@ namespace TurtleIFS.Forms
 
             progressBarLoding.Visible = visible;
 
-            buttonJira.Enabled = !visible;
-            buttonLcs.Enabled = !visible;
-            buttonOk.Enabled = !visible;
+            buttonIssueFinder.Enabled = !visible;
+            buttonAdd.Enabled = !visible;
             buttonResetSettings.Enabled = !visible;
         }
 
@@ -249,45 +242,41 @@ namespace TurtleIFS.Forms
             }
         }
 
-        bool bLcsNotLock = true;
-        bool bJiraNotLock = true;
-        private void textBoxJiraId_TextChanged(object sender, EventArgs e)
+        #region Set Add Button Text
+        private void SetAddButtonText()
+        {
+            if (radioButtonJira.Checked)
+            {
+                buttonAdd.Text = "Add JIRA Id";
+            }
+            else if (radioButtonLcs.Checked)
+            {
+                buttonAdd.Text = "Add LCS Id";
+            }
+        }
+
+        private void radioButtonJira_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                this.bJiraNotLock = false;
-                if (this.bLcsNotLock)
-                {
-                    textBoxLcsBugId.Text = string.Empty;
-                    textBoxLcsBugDescription.Text = string.Empty;
-
-                    buttonOk.Text = "Add Jira Id";
-                }
-                this.bJiraNotLock = true;
+                this.SetAddButtonText();
             }
             catch (Exception)
             {
             }
         }
 
-        private void textBoxLcsBugId_TextChanged(object sender, EventArgs e)
+        private void radioButtonLcs_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                this.bLcsNotLock = false;
-                if (this.bJiraNotLock)
-                {
-                    textBoxJiraId.Text = string.Empty;
-                    textBoxJiraDescription.Text = string.Empty;
-
-                    buttonOk.Text = "Add LCS Id";
-                }
-                this.bLcsNotLock = true;
+                this.SetAddButtonText();
             }
             catch (Exception)
             {
             }
         }
+        #endregion
 
         private void buttonContactSupport_Click(object sender, EventArgs e)
         {
@@ -315,6 +304,15 @@ namespace TurtleIFS.Forms
             {
                 this.Text += " [" + Assembly.GetExecutingAssembly().GetName().Version + "]";
 
+                if (Properties.Settings.Default.JiraSelected)
+                {
+                    this.radioButtonJira.Checked = true;
+                }
+                else
+                {
+                    this.radioButtonLcs.Checked = true;
+                }
+
                 myNotifierLync = new NotifierLync();
             }
             catch (Exception)
@@ -322,5 +320,6 @@ namespace TurtleIFS.Forms
                 buttonContactSupport.Enabled = false;
             }
         }
+                      
     }
 }

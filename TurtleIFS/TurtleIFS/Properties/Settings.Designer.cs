@@ -62,24 +62,12 @@ namespace TurtleIFS.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string JiraID {
+        public string IssueID {
             get {
-                return ((string)(this["JiraID"]));
+                return ((string)(this["IssueID"]));
             }
             set {
-                this["JiraID"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LcsBugId {
-            get {
-                return ((string)(this["LcsBugId"]));
-            }
-            set {
-                this["LcsBugId"] = value;
+                this["IssueID"] = value;
             }
         }
         
@@ -116,6 +104,18 @@ namespace TurtleIFS.Properties {
             }
             set {
                 this["HeaderMessage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool JiraSelected {
+            get {
+                return ((bool)(this["JiraSelected"]));
+            }
+            set {
+                this["JiraSelected"] = value;
             }
         }
     }
