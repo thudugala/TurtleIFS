@@ -11,6 +11,7 @@ using System.Net;
 using System.IO;
 using mshtml;
 using TurtleIFS.Classes;
+using System.Reflection;
 
 namespace TurtleIFS.Forms
 {
@@ -18,6 +19,7 @@ namespace TurtleIFS.Forms
     {
         public String CommitMessage { get; private set; }
 
+        private NotifierLync myNotifierLync;
         private Jira myJira;
         private readonly string LCS_BUG_URI = "http://lcs.corpnet.ifsworld.com/login/secured/buglnw/BlBug.page?BUG_ID=";
 
@@ -225,13 +227,17 @@ namespace TurtleIFS.Forms
 
         private void SetControlVisibility(bool visible)
         {
+            this.Cursor = (visible) ? Cursors.WaitCursor : Cursors.Default;
+
             progressBarLoding.Visible = visible;
+
             buttonJira.Enabled = !visible;
             buttonLcs.Enabled = !visible;
             buttonOk.Enabled = !visible;
+            buttonResetSettings.Enabled = !visible;
         }
 
-        private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buttonResetSettings_Click(object sender, EventArgs e)
         {
             try
             {
@@ -240,6 +246,80 @@ namespace TurtleIFS.Forms
             catch (Exception ex)
             {
                 MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        bool bLcsNotLock = true;
+        bool bJiraNotLock = true;
+        private void textBoxJiraId_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bJiraNotLock = false;
+                if (this.bLcsNotLock)
+                {
+                    textBoxLcsBugId.Text = string.Empty;
+                    textBoxLcsBugDescription.Text = string.Empty;
+
+                    buttonOk.Text = "Add Jira Id";
+                }
+                this.bJiraNotLock = true;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void textBoxLcsBugId_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bLcsNotLock = false;
+                if (this.bJiraNotLock)
+                {
+                    textBoxJiraId.Text = string.Empty;
+                    textBoxJiraDescription.Text = string.Empty;
+
+                    buttonOk.Text = "Add LCS Id";
+                }
+                this.bLcsNotLock = true;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void buttonContactSupport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (myNotifierLync != null)
+                {
+                    DialogResult contact = MessageBox.Show("Do you really need to contact Me? :| ",
+                                                           "Contact Support",
+                                                           MessageBoxButtons.YesNo);
+                    if (contact == DialogResult.Yes)
+                    {
+                        myNotifierLync.SendMessage(Properties.Settings.Default.HeaderMessage);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void FormJiraIssueFinder_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Text += " [" + Assembly.GetExecutingAssembly().GetName().Version + "]";
+
+                myNotifierLync = new NotifierLync();
+            }
+            catch (Exception)
+            {
+                buttonContactSupport.Enabled = false;
             }
         }
     }

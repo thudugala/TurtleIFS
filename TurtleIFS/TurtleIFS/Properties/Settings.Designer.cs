@@ -94,5 +94,29 @@ namespace TurtleIFS.Properties {
                 this["LcsMultiDev"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("peumali.sudasinghe@ifsworld.com")]
+        public string SupportPerson {
+            get {
+                return ((string)(this["SupportPerson"]));
+            }
+            set {
+                this["SupportPerson"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Houston, we have a problem!")]
+        public string HeaderMessage {
+            get {
+                return ((string)(this["HeaderMessage"]));
+            }
+            set {
+                this["HeaderMessage"] = value;
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -37,6 +37,8 @@
     <Reference Include="Interop.BugTraqProvider">
       <HintPath>..\packages\TortoiseSVN.BugTraqProvider\lib\net20\Interop.BugTraqProvider.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Lync.Model, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Lync.Utilities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
@@ -59,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BwArguments.cs" />
+    <Compile Include="Classes\NotifierLync.cs" />
     <Compile Include="Classes\TicketItem.cs" />
     <Compile Include="Forms\FormJiraIssueFinder.cs">
       <SubType>Form</SubType>
@@ -116,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ifs_logo_frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contactSupport.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
