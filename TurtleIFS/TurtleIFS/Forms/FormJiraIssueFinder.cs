@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net;
+using System.Reflection;
 using System.Windows.Forms;
 using Atlassian.Jira;
-using System.Net;
-using System.IO;
 using mshtml;
 using TurtleIFS.Classes;
-using System.Reflection;
 
 namespace TurtleIFS.Forms
 {
@@ -46,7 +40,7 @@ namespace TurtleIFS.Forms
                     this.CommitMessage += "-" + textBoxIssueId.Text + ": " + textBoxDescription.Text;
                 }
                 this.CommitMessage = this.CommitMessage.Trim();
-                
+
                 this.SaveSettings();
             }
             catch (Exception ex)
@@ -128,7 +122,7 @@ namespace TurtleIFS.Forms
                     e.Result = arg;
                 }
 
-                // If the operation was canceled by the user, 
+                // If the operation was canceled by the user,
                 // set the DoWorkEventArgs.Cancel property to true.
                 if (worker.CancellationPending)
                 {
@@ -243,6 +237,7 @@ namespace TurtleIFS.Forms
         }
 
         #region Set Add Button Text
+
         private void SetAddButtonText()
         {
             if (radioButtonJira.Checked)
@@ -276,6 +271,7 @@ namespace TurtleIFS.Forms
             {
             }
         }
+
         #endregion
 
         private void buttonContactSupport_Click(object sender, EventArgs e)
@@ -289,7 +285,7 @@ namespace TurtleIFS.Forms
                                                            MessageBoxButtons.YesNo);
                     if (contact == DialogResult.Yes)
                     {
-                        myNotifierLync.SendMessage(Properties.Settings.Default.HeaderMessage);
+                        myNotifierLync.SendMessage(projectsToolStripMenuItem.Checked, serviceAsetToolStripMenuItem.Checked);
                     }
                 }
             }
@@ -320,6 +316,34 @@ namespace TurtleIFS.Forms
                 buttonContactSupport.Enabled = false;
             }
         }
-                      
+
+        private void contextMenuStripProductGroup_Opening(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(Properties.Settings.Default.SupportPerson) ||
+                   Properties.Settings.Default.SupportPerson == Properties.Resources.SupportPersonOther)
+                {
+                    projectsToolStripMenuItem.Checked = false;
+                    serviceAsetToolStripMenuItem.Checked = false;
+                    otherToolStripMenuItem.Checked = true;
+                }
+                else if (Properties.Settings.Default.SupportPerson == Properties.Resources.SupportPersonProjects)
+                {
+                    projectsToolStripMenuItem.Checked = true;
+                    serviceAsetToolStripMenuItem.Checked = false;
+                    otherToolStripMenuItem.Checked = false;
+                }
+                else if (Properties.Settings.Default.SupportPerson == Properties.Resources.SupportPersonServiceAsset)
+                {
+                    projectsToolStripMenuItem.Checked = false;
+                    serviceAsetToolStripMenuItem.Checked = true;
+                    otherToolStripMenuItem.Checked = false;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

@@ -17,14 +17,11 @@
     <Setting Name="LcsMultiDev" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SupportPerson" Type="System.String" Scope="User">
-      <Value Profile="(Default)">peumali.sudasinghe@ifsworld.com</Value>
-    </Setting>
-    <Setting Name="HeaderMessage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Houston, we have a problem!</Value>
-    </Setting>
     <Setting Name="JiraSelected" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SupportPerson" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tharindu.thudugala@ifsworld.com</Value>
     </Setting>
   </Settings>
 </SettingsFile>

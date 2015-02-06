@@ -35,9 +35,19 @@ namespace TurtleIFS.Classes
             }
         }
 
-        internal void SendMessage(string imText)
+        internal void SendMessage(bool productGroupProject, bool productGroupServiceAsset)
         {
-            this.SendMessage(Properties.Settings.Default.SupportPerson, imText);
+            Properties.Settings.Default.SupportPerson = Properties.Resources.SupportPersonOther;
+            if (productGroupProject)
+            {
+                Properties.Settings.Default.SupportPerson = Properties.Resources.SupportPersonProjects;
+            }
+            else if (productGroupServiceAsset)
+            {
+                Properties.Settings.Default.SupportPerson = Properties.Resources.SupportPersonServiceAsset;
+            }
+
+            this.SendMessage(Properties.Settings.Default.SupportPerson, Properties.Resources.HeaderMessage);
         }
 
         internal void SendMessage(string inviteeEmail, string imText)

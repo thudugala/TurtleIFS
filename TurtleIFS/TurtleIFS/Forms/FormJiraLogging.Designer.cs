@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJiraLogging));
             this.elementHostLogging = new System.Windows.Forms.Integration.ElementHost();
             this.userControlJiraLogging1 = new TurtleIFS.Forms.UserControlJiraLogging();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.ClientSize = new System.Drawing.Size(458, 207);
             this.Controls.Add(this.elementHostLogging);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(354, 160);

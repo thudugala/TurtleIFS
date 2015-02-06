@@ -248,6 +248,21 @@
             Allows calls in the form of issue.Priority != "High"
             </remarks>
         </member>
+        <member name="P:Atlassian.Jira.IssueType.IsSubTask">
+            <summary>
+            Whether this issue type represents a sub-task.
+            </summary>
+        </member>
+        <member name="T:Atlassian.Jira.JiraCredentials">
+            <summary>
+            Holds user and password information for user that connects to JIRA.
+            </summary>
+        </member>
+        <member name="T:Atlassian.Jira.LiteralDateTime">
+            <summary>
+            Force a DateTime field to use a string provided as the JQL query value.
+            </summary>
+        </member>
         <member name="T:Atlassian.Jira.LiteralMatch">
             <summary>
             Force a CustomField comparison to use the exact match JQL operator.
@@ -332,9 +347,15 @@
         </member>
         <member name="M:Atlassian.Jira.Issue.AddComment(System.String)">
             <summary>
-            Add a comment to this issue
+            Add a comment to this issue.
             </summary>
-            <param name="comment">Comment text to add</param>
+            <param name="comment">Comment text to add.</param>
+        </member>
+        <member name="M:Atlassian.Jira.Issue.AddComment(Atlassian.Jira.Comment)">
+            <summary>
+            Add a comment to this issue.
+            </summary>
+            <param name="comment">Comment object to add.</param>
         </member>
         <member name="M:Atlassian.Jira.Issue.AddLabels(System.String[])">
             <summary>
@@ -364,6 +385,12 @@
             <summary>
             Deletes the worklog with the given id and updates the remaining estimate field on the isssue
             </summary>
+        </member>
+        <member name="M:Atlassian.Jira.Issue.GetResolutionDate">
+            <summary>
+            Retrieve the resolution date for this issue.
+            </summary>
+            <returns>Resultion date for this issue, null if it hasn't been resolved.</returns>
         </member>
         <member name="M:Atlassian.Jira.Issue.GetWorklogs">
             <summary>
@@ -409,6 +436,11 @@
         <member name="P:Atlassian.Jira.Issue.Assignee">
             <summary>
             Person to whom the issue is currently assigned
+            </summary>
+        </member>
+        <member name="P:Atlassian.Jira.Issue.JiraIdentifier">
+            <summary>
+            Gets the internal identifier assigned by JIRA.
             </summary>
         </member>
         <member name="P:Atlassian.Jira.Issue.Key">
@@ -500,22 +532,40 @@
         </member>
         <member name="M:Atlassian.Jira.Jira.#ctor(System.String)">
             <summary>
-            Create a connection to a JIRA server with anonymous access
+            Create a proxy that connects with a JIRA server with anonymous access.
             </summary>
             <param name="url">Url to the JIRA server</param>
+        </member>
+        <member name="M:Atlassian.Jira.Jira.#ctor(Atlassian.Jira.Linq.IJqlExpressionVisitor,Atlassian.Jira.Remote.IJiraSoapServiceClient,Atlassian.Jira.IFileSystem)">
+            <summary>
+            Create a proxy that connects with a JIRA server with anonymous access with depencies.
+            </summary>
         </member>
         <member name="M:Atlassian.Jira.Jira.#ctor(System.String,System.String,System.String)">
             <summary>
-            Create a connection to a JIRA server with provided credentials
+            Create a proxy that connects with a JIRA server with specified credentials.
             </summary>
             <param name="url">Url to the JIRA server</param>
-            <param name="username">username to use to authenticate</param>
-            <param name="password">passowrd to use to authenticate</param>
+            <param name="username">Username used to authenticate</param>
+            <param name="password">Password used to authenticate</param>
         </member>
-        <member name="M:Atlassian.Jira.Jira.#ctor(Atlassian.Jira.Linq.IJqlExpressionVisitor,Atlassian.Jira.Remote.IJiraSoapServiceClient,Atlassian.Jira.IFileSystem,System.String,System.String)">
+        <member name="M:Atlassian.Jira.Jira.#ctor(System.String,System.String,System.Func{Atlassian.Jira.JiraCredentials})">
             <summary>
-            Create a connection to a JIRA server
+            Create a proxy that connects with a JIRA server with specified access token.
             </summary>
+            <param name="url">Url to the JIRA server.</param>
+            <param name="token">JIRA access token to use.</param>
+            <param name="credentialsProvider">Provider of credentials needed to re-generate token.</param>
+        </member>
+        <member name="M:Atlassian.Jira.Jira.#ctor(Atlassian.Jira.Linq.IJqlExpressionVisitor,Atlassian.Jira.Remote.IJiraSoapServiceClient,Atlassian.Jira.IFileSystem,System.String,System.Func{Atlassian.Jira.JiraCredentials})">
+            <summary>
+            Create a proxy that connects with a JIRA server with specified access token and dependencies.
+            </summary>
+            <param name="translator"></param>
+            <param name="jiraSoapService"></param>
+            <param name="fileSystem"></param>
+            <param name="accessToken"></param>
+            <param name="credentialsProvider"></param>
         </member>
         <member name="M:Atlassian.Jira.Jira.GetIssue(System.String)">
             <summary>
@@ -550,6 +600,17 @@
         <member name="M:Atlassian.Jira.Jira.CreateIssue(System.String,System.String)">
             <summary>
             Returns a new issue that when saved will be created on the remote JIRA server
+            </summary>
+        </member>
+        <member name="M:Atlassian.Jira.Jira.DeleteIssue(Atlassian.Jira.Issue)">
+            <summary>
+            Deletes the issue specified from the JIRA server.
+            </summary>
+            <param name="issue">Issue to delete.</param>
+        </member>
+        <member name="M:Atlassian.Jira.Jira.GetSubTaskIssueTypes">
+            <summary>
+            Returns all the sub-tasks issue types within JIRA.
             </summary>
         </member>
         <member name="M:Atlassian.Jira.Jira.GetIssueTypes(System.String)">
@@ -642,6 +703,11 @@
             If function fails with 'com.atlassian.jira.rpc.exception.RemoteAuthenticationException'
             a new token will be requested from server and the function called again.
             </remarks>
+        </member>
+        <member name="M:Atlassian.Jira.Jira.GetAccessToken">
+            <summary>
+            Retrieves an access token from server using current credentials.
+            </summary>
         </member>
         <member name="P:Atlassian.Jira.Jira.Debug">
             <summary>

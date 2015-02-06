@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleIFS", "TurtleIFS\TurtleIFS.csproj", "{B09B0129-FE16-4D07-9F0F-865E86C7D532}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupTurtleIFS", "SetupTurtleIFS\SetupTurtleIFS.vdproj", "{97C27A91-915E-41D7-AAA8-5DEEB23446C9}"

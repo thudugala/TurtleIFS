@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJiraIssueFinder));
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonIssueFinder = new System.Windows.Forms.Button();
@@ -36,12 +38,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonResetSettings = new System.Windows.Forms.Button();
             this.buttonContactSupport = new System.Windows.Forms.Button();
+            this.contextMenuStripProductGroup = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviceAsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.radioButtonLcs = new System.Windows.Forms.RadioButton();
             this.radioButtonJira = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxMultidev = new System.Windows.Forms.CheckBox();
             this.textBoxIssueId = new System.Windows.Forms.TextBox();
+            this.contextMenuStripProductGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +135,7 @@
             this.buttonContactSupport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonContactSupport.AutoSize = true;
             this.buttonContactSupport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonContactSupport.ContextMenuStrip = this.contextMenuStripProductGroup;
             this.buttonContactSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContactSupport.Image = global::TurtleIFS.Properties.Resources.contactSupport;
             this.buttonContactSupport.Location = new System.Drawing.Point(12, 154);
@@ -137,6 +145,39 @@
             this.buttonContactSupport.TabStop = false;
             this.buttonContactSupport.UseVisualStyleBackColor = true;
             this.buttonContactSupport.Click += new System.EventHandler(this.buttonContactSupport_Click);
+            // 
+            // contextMenuStripProductGroup
+            // 
+            this.contextMenuStripProductGroup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.projectsToolStripMenuItem,
+            this.serviceAsetToolStripMenuItem,
+            this.otherToolStripMenuItem});
+            this.contextMenuStripProductGroup.Name = "contextMenuStripProductGroup";
+            this.contextMenuStripProductGroup.Size = new System.Drawing.Size(168, 70);
+            this.contextMenuStripProductGroup.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripProductGroup_Opening);
+            // 
+            // projectsToolStripMenuItem
+            // 
+            this.projectsToolStripMenuItem.CheckOnClick = true;
+            this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.projectsToolStripMenuItem.Text = "Projects";
+            // 
+            // serviceAsetToolStripMenuItem
+            // 
+            this.serviceAsetToolStripMenuItem.CheckOnClick = true;
+            this.serviceAsetToolStripMenuItem.Name = "serviceAsetToolStripMenuItem";
+            this.serviceAsetToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.serviceAsetToolStripMenuItem.Text = "Service And Asset";
+            // 
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.Checked = true;
+            this.otherToolStripMenuItem.CheckOnClick = true;
+            this.otherToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.otherToolStripMenuItem.Text = "Other";
             // 
             // pictureBox1
             // 
@@ -170,6 +211,7 @@
             this.radioButtonJira.Name = "radioButtonJira";
             this.radioButtonJira.Size = new System.Drawing.Size(47, 17);
             this.radioButtonJira.TabIndex = 1;
+            this.radioButtonJira.TabStop = true;
             this.radioButtonJira.Text = "JIRA";
             this.radioButtonJira.UseVisualStyleBackColor = true;
             this.radioButtonJira.CheckedChanged += new System.EventHandler(this.radioButtonJira_CheckedChanged);
@@ -230,6 +272,7 @@
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxIssueId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormJiraIssueFinder";
@@ -238,6 +281,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turtle IFS";
             this.Load += new System.EventHandler(this.FormJiraIssueFinder_Load);
+            this.contextMenuStripProductGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -262,5 +306,9 @@
         private System.Windows.Forms.RadioButton radioButtonJira;
         private System.Windows.Forms.RadioButton radioButtonLcs;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripProductGroup;
+        private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serviceAsetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
     }
 }
