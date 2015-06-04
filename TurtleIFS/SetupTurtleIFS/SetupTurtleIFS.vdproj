@@ -15,44 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_280C1E8A8255385F8B866F938256F253"
-        "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_280C1E8A8255385F8B866F938256F253"
-        "OwnerKey" = "8:_9343AEFB59910BA3B9AAD1F560077290"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2CF93F9E19DD66355E309363E697EE04"
-        "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7DF643740BA6947A6C56626B20998253"
-        "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8C149E92D0DB4DB2940EA2E91A965ECE"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9343AEFB59910BA3B9AAD1F560077290"
-        "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B38F64E6DBAE0D0DDFD80F4CD7230C59"
-        "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -67,36 +31,6 @@
         "OwnerKey" = "8:_E770CAFC6A774E979A4E8AB6B934DF80"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_280C1E8A8255385F8B866F938256F253"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7DF643740BA6947A6C56626B20998253"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B38F64E6DBAE0D0DDFD80F4CD7230C59"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9343AEFB59910BA3B9AAD1F560077290"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2CF93F9E19DD66355E309363E697EE04"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -105,7 +39,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\SetupTurtleIFS.msi"
+        "OutputFilename" = "8:Debug\\SetupTurtleEazyCheckout.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -202,99 +136,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_280C1E8A8255385F8B866F938256F253"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Office.Uc, Version=4.0.7577.5, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_280C1E8A8255385F8B866F938256F253"
-                    {
-                    "Name" = "8:Microsoft.Office.Uc.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Office.Uc.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C80E0EC684EF4352BB3592A3F86B1AB7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2CF93F9E19DD66355E309363E697EE04"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Interop.BugTraqProvider, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2CF93F9E19DD66355E309363E697EE04"
-                    {
-                    "Name" = "8:Interop.BugTraqProvider.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Interop.BugTraqProvider.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C80E0EC684EF4352BB3592A3F86B1AB7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7DF643740BA6947A6C56626B20998253"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Atlassian.Jira, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_7DF643740BA6947A6C56626B20998253"
-                    {
-                    "Name" = "8:Atlassian.Jira.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Atlassian.Jira.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C80E0EC684EF4352BB3592A3F86B1AB7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C149E92D0DB4DB2940EA2E91A965ECE"
             {
             "SourcePath" = "8:..\\TurtleIFS\\Graphicloads-100-Flat-Download.ico"
@@ -313,68 +154,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9343AEFB59910BA3B9AAD1F560077290"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Lync.Model, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_9343AEFB59910BA3B9AAD1F560077290"
-                    {
-                    "Name" = "8:Microsoft.Lync.Model.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Lync.Model.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C80E0EC684EF4352BB3592A3F86B1AB7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B38F64E6DBAE0D0DDFD80F4CD7230C59"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.Lync.Utilities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_B38F64E6DBAE0D0DDFD80F4CD7230C59"
-                    {
-                    "Name" = "8:Microsoft.Lync.Utilities.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.Lync.Utilities.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C80E0EC684EF4352BB3592A3F86B1AB7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -432,9 +211,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Turtle IFS"
+        "ProductName" = "8:TurtleEazyCheckout"
         "ProductCode" = "8:{D1BB7F49-B656-49E6-8153-FB17DEC28470}"
-        "PackageCode" = "8:{222BDD50-A0F0-4620-A937-C892D271DB80}"
+        "PackageCode" = "8:{B6CFA3C1-5007-40CF-890F-74EE3514481D}"
         "UpgradeCode" = "8:{23CA1A34-3D4C-4BCB-B65E-66738E617D90}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -442,10 +221,10 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.4"
-        "Manufacturer" = "8:IFS World"
+        "Manufacturer" = "8:DevTools"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:SetupTurtleIFS"
+        "Title" = "8:Setup TurtleEazyCheckout"
         "Subject" = "8:"
         "ARPCONTACT" = "8:ththlk"
         "Keywords" = "8:"
@@ -1105,7 +884,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E770CAFC6A774E979A4E8AB6B934DF80"
             {
-            "SourcePath" = "8:..\\TurtleIFS\\obj\\Debug\\TurtleIFS.dll"
+            "SourcePath" = "8:..\\TurtleIFS\\obj\\Debug\\TurtleEazyCheckout.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C80E0EC684EF4352BB3592A3F86B1AB7"

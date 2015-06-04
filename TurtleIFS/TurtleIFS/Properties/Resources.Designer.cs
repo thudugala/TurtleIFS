@@ -90,16 +90,6 @@ namespace TurtleIFS.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ifs_logo_frame {
-            get {
-                object obj = ResourceManager.GetObject("ifs_logo_frame", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to tharindu.thudugala@ifsworld.com.
         /// </summary>
         internal static string SupportPersonOther {

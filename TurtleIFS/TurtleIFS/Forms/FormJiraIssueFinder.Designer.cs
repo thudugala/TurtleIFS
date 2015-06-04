@@ -42,14 +42,12 @@
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviceAsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.radioButtonLcs = new System.Windows.Forms.RadioButton();
             this.radioButtonJira = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxMultidev = new System.Windows.Forms.CheckBox();
             this.textBoxIssueId = new System.Windows.Forms.TextBox();
             this.contextMenuStripProductGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,7 +112,7 @@
             this.label3.Padding = new System.Windows.Forms.Padding(10);
             this.label3.Size = new System.Drawing.Size(444, 65);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Get IFS Commit Message";
+            this.label3.Text = "Get Commit Message";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonResetSettings
@@ -178,17 +176,6 @@
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.otherToolStripMenuItem.Text = "Other";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::TurtleIFS.Properties.Resources.ifs_logo_frame;
-            this.pictureBox1.Location = new System.Drawing.Point(390, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // radioButtonLcs
             // 
@@ -263,7 +250,6 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.buttonContactSupport);
             this.Controls.Add(this.buttonResetSettings);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.progressBarLoding);
             this.Controls.Add(this.checkBoxMultidev);
@@ -282,7 +268,6 @@
             this.Text = "Turtle IFS";
             this.Load += new System.EventHandler(this.FormJiraIssueFinder_Load);
             this.contextMenuStripProductGroup.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -300,7 +285,6 @@
         private System.Windows.Forms.ProgressBar progressBarLoding;
         private System.ComponentModel.BackgroundWorker backgroundWorkerGetDescription;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonResetSettings;
         private System.Windows.Forms.Button buttonContactSupport;
         private System.Windows.Forms.RadioButton radioButtonJira;
