@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TurtleIFS.Forms
+namespace TurtleEazyCheckout.Forms
 {
     public partial class FormJiraLogging : Form
     {

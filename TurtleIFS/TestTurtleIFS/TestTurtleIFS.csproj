@@ -85,9 +85,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TurtleIFS\TurtleIFS.csproj">
+    <ProjectReference Include="..\TurtleIFS\TurtleEazyCheckout.csproj">
       <Project>{B09B0129-FE16-4D07-9F0F-865E86C7D532}</Project>
-      <Name>TurtleIFS</Name>
+      <Name>TurtleEazyCheckout</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

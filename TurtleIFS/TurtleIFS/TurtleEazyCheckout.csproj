@@ -8,7 +8,7 @@
     <ProjectGuid>{B09B0129-FE16-4D07-9F0F-865E86C7D532}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TurtleIFS</RootNamespace>
+    <RootNamespace>TurtleEazyCheckout</RootNamespace>
     <AssemblyName>TurtleEazyCheckout</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -108,9 +108,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="TurtleIFS.reg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\FormJiraIssueFinder.resx">
@@ -138,7 +135,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegAsm.exe "$(TargetPath)" /codebase /regfile:TurtleIFS.reg</PostBuildEvent>
+    <PostBuildEvent>C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegAsm.exe "$(TargetPath)" /codebase /regfile:TurtleEazyCheckout.reg</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

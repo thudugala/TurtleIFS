@@ -1,4 +1,4 @@
-﻿namespace TurtleIFS.Forms
+﻿namespace TurtleEazyCheckout.Forms
 {
     partial class FormJiraLogging
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJiraLogging));
             this.elementHostLogging = new System.Windows.Forms.Integration.ElementHost();
-            this.userControlJiraLogging1 = new TurtleIFS.Forms.UserControlJiraLogging();
+            this.userControlJiraLogging1 = new TurtleEazyCheckout.Forms.UserControlJiraLogging();
             this.SuspendLayout();
             // 
             // elementHostLogging

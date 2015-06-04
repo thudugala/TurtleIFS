@@ -1,4 +1,4 @@
-﻿namespace TurtleIFS.Forms
+﻿namespace TurtleEazyCheckout.Forms
 {
     partial class FormJiraIssueFinder
     {
@@ -135,7 +135,7 @@
             this.buttonContactSupport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonContactSupport.ContextMenuStrip = this.contextMenuStripProductGroup;
             this.buttonContactSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContactSupport.Image = global::TurtleIFS.Properties.Resources.contactSupport;
+            this.buttonContactSupport.Image = global::TurtleEazyCheckout.Properties.Resources.contactSupport;
             this.buttonContactSupport.Location = new System.Drawing.Point(12, 154);
             this.buttonContactSupport.Name = "buttonContactSupport";
             this.buttonContactSupport.Size = new System.Drawing.Size(24, 24);
@@ -218,8 +218,8 @@
             // 
             this.checkBoxMultidev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxMultidev.AutoSize = true;
-            this.checkBoxMultidev.Checked = global::TurtleIFS.Properties.Settings.Default.LcsMultiDev;
-            this.checkBoxMultidev.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::TurtleIFS.Properties.Settings.Default, "LcsMultiDev", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxMultidev.Checked = global::TurtleEazyCheckout.Properties.Settings.Default.LcsMultiDev;
+            this.checkBoxMultidev.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::TurtleEazyCheckout.Properties.Settings.Default, "LcsMultiDev", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBoxMultidev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxMultidev.Location = new System.Drawing.Point(369, 74);
             this.checkBoxMultidev.Name = "checkBoxMultidev";
@@ -233,12 +233,12 @@
             this.textBoxIssueId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxIssueId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxIssueId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::TurtleIFS.Properties.Settings.Default, "IssueID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBoxIssueId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::TurtleEazyCheckout.Properties.Settings.Default, "IssueID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBoxIssueId.Location = new System.Drawing.Point(121, 71);
             this.textBoxIssueId.Name = "textBoxIssueId";
             this.textBoxIssueId.Size = new System.Drawing.Size(203, 20);
             this.textBoxIssueId.TabIndex = 3;
-            this.textBoxIssueId.Text = global::TurtleIFS.Properties.Settings.Default.IssueID;
+            this.textBoxIssueId.Text = global::TurtleEazyCheckout.Properties.Settings.Default.IssueID;
             // 
             // FormJiraIssueFinder
             // 
@@ -265,7 +265,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Turtle IFS";
+            this.Text = "TurtleEazyCheckout";
             this.Load += new System.EventHandler(this.FormJiraIssueFinder_Load);
             this.contextMenuStripProductGroup.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

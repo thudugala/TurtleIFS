@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
-using TurtleIFS.Classes;
-using TurtleIFS.Forms;
+using TurtleEazyCheckout.Classes;
+using TurtleEazyCheckout.Forms;
 using System.Windows.Forms;
 
-namespace TurtleIFS
+namespace TurtleEazyCheckout
 {
     [ComVisible(true), Guid("DD5D4E0F-9012-4333-AFD4-0F9CC45C8C89"), ClassInterface(ClassInterfaceType.None)]
-    public class TurtleIFSPlugin : Interop.BugTraqProvider.IBugTraqProvider
+    public class TurtleEazyCheckoutPlugin : Interop.BugTraqProvider.IBugTraqProvider
     {
         private List<TicketItem> selectedTickets = new List<TicketItem>();
 

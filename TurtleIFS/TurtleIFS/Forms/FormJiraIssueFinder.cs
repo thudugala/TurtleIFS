@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Windows.Forms;
 using Atlassian.Jira;
 using mshtml;
-using TurtleIFS.Classes;
+using TurtleEazyCheckout.Classes;
 
-namespace TurtleIFS.Forms
+namespace TurtleEazyCheckout.Forms
 {
     public partial class FormJiraIssueFinder : Form
     {

@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Lync.Model.Extensibility;
 using Microsoft.Lync.Model;
 
-namespace TurtleIFS.Classes
+namespace TurtleEazyCheckout.Classes
 {
     internal class NotifierLync
     {
