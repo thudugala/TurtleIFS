@@ -74,9 +74,9 @@ namespace TurtleEazyCheckout.Forms
                             logging.ShowDialog(this);
                         }
 
-                        this.myJira = new Jira(Properties.Settings.Default.JiraServer.Trim(),
-                                               Properties.Settings.Default.JiraUserName.Trim(),
-                                               Properties.Settings.Default.JiraPassword.Trim());
+                        this.myJira = Jira.CreateRestClient(Properties.Settings.Default.JiraServer.Trim(),
+                                                            Properties.Settings.Default.JiraUserName.Trim(),
+                                                            Properties.Settings.Default.JiraPassword.Trim());
                         this.myJira.Debug = false;
                         this.myJira.MaxIssuesPerRequest = int.MaxValue;
 
@@ -175,13 +175,20 @@ namespace TurtleEazyCheckout.Forms
 
         private string GetJiraDescription(string JiraId)
         {
-            if (string.IsNullOrWhiteSpace(JiraId) == false)
+            try
             {
-                Issue jiraIssue = this.myJira.GetIssue(JiraId);
-                if (jiraIssue != null)
+                if (string.IsNullOrWhiteSpace(JiraId) == false)
                 {
-                    return jiraIssue.Summary;
+                    Issue jiraIssue = this.myJira.Issues.GetIssueAsync(JiraId).Result;
+                    if (jiraIssue != null)
+                    {
+                        return jiraIssue.Summary;
+                    }
                 }
+            }
+            catch
+            {
+                throw;
             }
             return string.Empty;
         }
@@ -192,7 +199,9 @@ namespace TurtleEazyCheckout.Forms
             {
                 if (e.Error != null)
                 {
-                    MessageBox.Show(e.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string errorMessage = e.Error.Message + (e.Error.InnerException == null ? string.Empty : e.Error.InnerException.InnerException.Message);
+
+                    MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
