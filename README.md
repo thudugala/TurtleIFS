@@ -3,7 +3,7 @@ TurtleIFS
 
 Turtle IFS
 
-![alt text](screenshots/TurtleEazyCheckout.png "Home Screen")
+![alt text](screenshots/TurtleEazyCheckout.PNG "Home Screen")
 
 After Installing Turtle IFS (Issue Tracker Integration for TortiseSVN), Please set the “Working Copy Path” to Projects-Root-Path.
 
